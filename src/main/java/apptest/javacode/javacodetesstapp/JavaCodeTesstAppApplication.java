@@ -1,0 +1,13 @@
+package apptest.javacode.javacodetesstapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class JavaCodeTesstAppApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(JavaCodeTesstAppApplication.class, args);
+    }
+
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="init-wallet-table" author="alina">
+        <validCheckSum>9:699b78344d693af12dd316d9528a10ff</validCheckSum>
+        <createSequence sequenceName="wallets_id_seq" startValue="1" incrementBy="1"/>
+
+        <createTable tableName="wallets">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="balance" type="decimal(19,4)" defaultValue="0.0">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addDefaultValue
+                tableName="wallets"
+                columnName="id"
+                defaultValueSequenceNext="wallets_id_seq"/>
+    </changeSet>
+</databaseChangeLog>

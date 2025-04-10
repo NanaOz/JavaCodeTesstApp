@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=mypostgresjavacode'
+      - 'POSTGRES_PASSWORD=JCODE'
+      - 'POSTGRES_USER=javacode'
+    ports:
+      - '5432'
